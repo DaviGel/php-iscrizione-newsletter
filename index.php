@@ -20,15 +20,9 @@
         <button type="submit" class="btn btn-primary">Invia</button>
       </form>
       <?php include __DIR__ . "/functions.php"; ?>
-      <?php if($email !== '' && isValidEmail($email) === true) : ?>
-      <div class="alert alert-success mt-3" role="alert">
-        L'email inserita è valida!
+      <div class="alert <?php if($email !== '' && isValidEmail($email) === true){ echo 'alert-success';} elseif($email !== '') {echo 'alert-danger'; } ?> mt-3" role="alert">
+        <?php if($email !== '' && isValidEmail($email) === true) : ?> L'email inserita è valida <?php elseif($email !== '') : ?> L'email inserita non è valida <?php endif; ?>
       </div>
-      <?php elseif($email !== '') : ?>
-      <div class="alert alert-danger mt-3" role="alert">
-        L'email inserita non è valida
-      </div>
-      <?php endif; ?>
     </div>
   </body>
 </html>

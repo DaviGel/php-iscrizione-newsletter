@@ -5,3 +5,4 @@
     if (preg_match($pattern, trim($email))) return true; 
     else return false;
   }
+?>
