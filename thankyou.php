@@ -1,5 +1,9 @@
 <?php 
-  require_once __DIR__ . '/session.php';
+  // require_once __DIR__ . '/session.php';
+  session_start();
+  if(!isset($_SESSION['email'])) {
+    $_SESSION['email'] = '';
+  }
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +19,7 @@
   <body class="pt-5">
     <div class="container">
       <h1 class="text-center">Thank you for the registration!</h1>
-      <p class="text-center">Your email address is: <?php echo $email; ?></p>
+      <p class="text-center">Your email address is: <?php echo $_SESSION['email']; ?></p>
     </div>
     <?php
       session_unset();
