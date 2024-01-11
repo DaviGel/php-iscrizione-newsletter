@@ -1,5 +1,4 @@
-<?php 
-  // require_once __DIR__ . '/session.php';
+<?php
   session_start();
   if(!isset($_SESSION['email'])) {
     $_SESSION['email'] = '';
